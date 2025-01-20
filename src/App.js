@@ -4,14 +4,21 @@ import { FacebookIcon, PhoneIcon, EmailIcon, PinIcon, DiagonalArrowIcon } from '
 function App() {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
-        <header className="grid grid-rows-[20px_1fr_20px] items-center justify-items-left gap-4 sm:p-12 sm:pb-0 font-[family-name:var(--font-geist-sans)]">
-          <h1 className="text-2xl flex items-center gap-2 font-bold">
-              Southside Badminton Club Gold Coast
-             
-          </h1>
-        <p>
-          We are a non-profit social badminton club. All levels of players are welcome. Come and join us for fun, fitness and meeting friends!
-        </p>
+        <header className="flex items-start gap-5 sm:p-12 sm:pb-0 font-[family-name:var(--font-geist-sans)]">
+          
+          <img src={`${process.env.PUBLIC_URL}/southside-logo.png`} 
+               alt="Southside Badminton Club Logo" 
+               width="125" height="125"
+               className="flex-shrink-0" 
+          />
+          <div className="flex flex-col gap-4">
+            <h1 className="text-2xl font-bold">
+                Southside Badminton Club Gold Coast
+            </h1>
+            <p>
+              We are a non-profit social badminton club. All levels of players are welcome. Come and join us for fun, fitness and meeting friends!
+            </p>
+          </div>
 
         <a className="absolute top-5 right-5 bg-[#5be0e6] inline-flex gap-2 font-bold py-2 px-3 rounded hover:text-[#FFFFFF]" 
            href="https://events.humanitix.com/southside-badminton-club-session-booking"
