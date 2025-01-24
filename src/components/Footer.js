@@ -16,7 +16,9 @@ const Footer = () => {
           <p className="font-bold">Contact Us:</p>
           <ul >
             <li className="flex items-center gap-2"><PhoneIcon />+61 419 002 098</li>
-            <li className="flex items-center gap-2"><EmailIcon /> southsidebadmintonclub@gmail.com</li>
+            <li className="flex items-center gap-2"><EmailIcon /> 
+                <a href="mailto: southsidebadmintonclub@gmail.com">southsidebadmintonclub@gmail.com</a>
+            </li>
             <li className="flex items-center gap-2"><PinIcon />Lot 22 Assembly Drive, Varsity Lakes QLD 4227, Australia</li>
           </ul>
         </div>
