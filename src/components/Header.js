@@ -2,8 +2,8 @@ import { DiagonalArrowIcon } from './Icons';
 
 const Header = () => {
     return (
-        <header className="flex items-start gap-5 sm:p-12 sm:pb-0 font-[family-name:var(--font-geist-sans)]">
-          
+        <header className="flex items-start gap-5 border-b-2 border-[#000000] sm:p-12 sm:pb-0 font-[family-name:var(--font-geist-sans)]">
+
           <img src={`${process.env.PUBLIC_URL}/images/southside-logo.png`} 
                alt="Southside Badminton Club Logo" 
                width="125" height="125"

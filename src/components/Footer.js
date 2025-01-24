@@ -3,7 +3,7 @@ import { FacebookIcon, PhoneIcon, EmailIcon, PinIcon, DiagonalArrowIcon } from '
 const Footer = () => {
   
     return (
-        <footer className="grid grid-cols-3 text-sm text-gray-700 p-4 bg-[#75b9bc] text-[#ffffff]">
+        <footer className="grid grid-cols-3 text-sm text-gray-700 p-4 bg-[#75b9bc] text-[#ffffff] border-t-2 border-[#000000]">
         <div>
           <p className="font-bold">Business Hours:</p>
           <ul>
