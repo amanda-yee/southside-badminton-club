@@ -41,7 +41,7 @@ const ImageCarousel = () => {
         </div>
       </div>
 
-      {/* Navigation Buttons */}
+      {/* Nav arrows */}
       <button
         className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
         onClick={prevSlide}
@@ -55,7 +55,7 @@ const ImageCarousel = () => {
         &#8594;
       </button>
 
-      {/* Dots for Navigation */}
+      {/* Nav dots */}
       <div className="flex justify-center mt-4 gap-2">
         {images.map((_, index) => (
           <button
