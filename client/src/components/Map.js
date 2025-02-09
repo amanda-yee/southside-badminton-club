@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 const MapContainer = () => {
   const containerStyle = {
@@ -19,6 +19,8 @@ const MapContainer = () => {
         center={center}
         zoom={15}
       >
+
+        <MarkerF position={center} title="Southside Badminton Club" />
 
       </GoogleMap>
     </LoadScript>
