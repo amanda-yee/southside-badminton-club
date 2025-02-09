@@ -7,18 +7,19 @@ const Footer = () => {
         <div>
           <p className="font-bold">Business Hours:</p>
           <ul>
-            <li>Mon - Thu: 7:30 PM - 9:30 PM</li>
-            <li>Sat: 7:30 PM - 9:30 PM</li>
-            <li>Fri & Sun: Closed</li>
+            <li>MON - THU: 7:30pm - 9:30pm</li>
+            <li>FRI: Closed</li>
+            <li>SAT: 7:30pm - 9:30pm</li>
+            <li>SUN: Closed</li>
           </ul>
         </div>
         <div>
           <p className="font-bold">Contact Us:</p>
           <ul >
-            <li className="flex items-center gap-2"><PhoneIcon />+61 419 002 098</li>
-            <li className="flex items-center gap-2"><EmailIcon /> 
+          <li className="flex items-center gap-2 underline"><EmailIcon /> 
                 <a href="mailto: southsidebadmintonclub@gmail.com">southsidebadmintonclub@gmail.com</a>
             </li>
+            <li className="flex items-center gap-2"><PhoneIcon />+61 419 002 098</li>
             <li className="flex items-center gap-2"><PinIcon />Lot 22 Assembly Drive, Varsity Lakes QLD 4227, Australia</li>
           </ul>
         </div>

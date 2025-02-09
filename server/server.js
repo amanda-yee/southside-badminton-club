@@ -2,6 +2,10 @@
 // npm init -y
 // npm install express cors
 
+// this file is important for API calls (among other things)
+// setting up the backend will route API calls through it, and the server acts as an intermediary, avoiding CORS restrictions
+// without it, the browser will directly be making the API calls and could be blocked from the origin e.g. Google Maps API
+
 const express = require("express");
 const cors = require("cors");
 
