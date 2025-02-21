@@ -30,8 +30,8 @@ app.get('/api/google-reviews', async (req, res) => {
       `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,reviews&key=${apiKey}`
     );
   
-    console.log(response.data)
-    res.json(response.data);
+    // console.log(response.data)
+    res.json(response.data); // return response to front end in json format
   } catch (error) {
     console.error('Error fetching from Google API:', error);  // Log the error
   }
