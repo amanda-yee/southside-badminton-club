@@ -8,9 +8,8 @@ const Footer = () => {
           <p className="font-bold">Business Hours:</p>
           <ul>
             <li>MON - THU: 7:30pm - 9:30pm</li>
-            <li>FRI: Closed</li>
             <li>SAT: 7:30pm - 9:30pm</li>
-            <li>SUN: Closed</li>
+            <li>FRI & SUN: Closed</li>
           </ul>
         </div>
         <div>
