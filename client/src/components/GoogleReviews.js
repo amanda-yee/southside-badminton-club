@@ -17,7 +17,9 @@ const GoogleReviews = () => {
                 
                 if (data.result.reviews) {
                   // Filter to 5 star reviews 
-                  const filteredReviews = data.result.reviews.filter(review => review.rating == 5);  
+                  const filteredReviews = data.result.reviews.filter(
+                    review => review.rating == 5
+                  );  
                   setReviews(filteredReviews);
                 } else {
                   console.error('No reviews found in response');
@@ -36,15 +38,13 @@ const GoogleReviews = () => {
   return (
     <div>
       {reviews.length > 0 ? (
-        <ul>
-          {reviews.map((review) => (
-            <li key={review.time}>
-              <strong>{review.author_name}</strong>
-              <p>{'⭐'.repeat(Math.round(review.rating))}</p>
-              <p>{review.text}</p>
-            </li>
-          ))}
-        </ul>
+        reviews.map((review) => (
+            <div key={review.time} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}>
+            <strong>{review.author_name}</strong>
+            <p>{'⭐'.repeat(Math.round(review.rating))}</p>
+            <p>{review.text}</p>
+            </div>
+        ))
       ) : (
         <p>No reviews available.</p>
       )}
@@ -53,3 +53,5 @@ const GoogleReviews = () => {
 };
 
 export default GoogleReviews;
+
+        

@@ -6,6 +6,7 @@ import ImageCarousel from './components/ImageCarousel'
 import MapContainer from './components/Map'; 
 import GoogleReviews from './components/GoogleReviews'; 
 
+
 function App() {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">

@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 const MapContainer = () => {
 
   const containerStyle = {
-    width: '800px',
+    width: '400px',
     height: '400px',
   };
 
@@ -22,7 +22,7 @@ const MapContainer = () => {
 
   return (
     // REMOVE HARD CODING OF API KEY
-    <LoadScript googleMapsApiKey="AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM"> /
+    <LoadScript googleMapsApiKey="AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
