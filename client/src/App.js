@@ -13,7 +13,7 @@ function App() {
 
       <main className="grid grid-cols-1 gap-4 p-8 sm:p-12">
         <ImageCarousel />
-        <MapContainer />
+        <MapContainer />  
         <GoogleReviews />
       </main>
 

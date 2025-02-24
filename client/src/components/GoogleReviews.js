@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+// curl -X GET "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJEZDrEkMDkWsR1Nzkn-88Wmw&fields=name,rating,reviews&key=AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM"
 
+import React, { useEffect, useState } from "react";
 
 const GoogleReviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -10,12 +11,14 @@ const GoogleReviews = () => {
         try {
             const response = await fetch(`http://localhost:5000/api/google-reviews?placeId=${placeId}`);
             
-            if (response.ok) { // Check if response is OK (status code 200)
+            if (response.ok) {
                 const data = await response.json(); // Parse JSON data from the response
-                console.log(data); // Log the full data to ensure it contains 'result.reviews'
+                console.log(data); 
                 
-                if (data.result && data.result.reviews) {
-                  setReviews(data.result.reviews); // Assuming response has 'result.reviews'
+                if (data.result.reviews) {
+                  // Filter to 5 star reviews 
+                  const filteredReviews = data.result.reviews.filter(review => review.rating == 5);  
+                  setReviews(filteredReviews);
                 } else {
                   console.error('No reviews found in response');
                 }
@@ -32,12 +35,12 @@ const GoogleReviews = () => {
 
   return (
     <div>
-      <h2>Google Reviews</h2>
       {reviews.length > 0 ? (
         <ul>
-          {reviews.map((review, index) => (
-            <li key={index}>
-              <strong>{review.author_name}</strong> - ⭐ {review.rating}
+          {reviews.map((review) => (
+            <li key={review.time}>
+              <strong>{review.author_name}</strong>
+              <p>{'⭐'.repeat(Math.round(review.rating))}</p>
               <p>{review.text}</p>
             </li>
           ))}
@@ -50,5 +53,3 @@ const GoogleReviews = () => {
 };
 
 export default GoogleReviews;
-
-// curl -X GET "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJEZDrEkMDkWsR1Nzkn-88Wmw&fields=name,rating,reviews&key=AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM"
