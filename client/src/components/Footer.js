@@ -13,13 +13,20 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <p className="font-bold text-lg">Contact Us:</p>
-          <ul >
-          <li className="flex items-center gap-2 underline"><EmailIcon /> 
-                <a href="mailto: southsidebadmintonclub@gmail.com">southsidebadmintonclub@gmail.com</a>
+          <p className="items-center font-bold text-lg">Contact Us:</p>
+          <ul>
+            <li className="flex gap-2 underline">
+              <EmailIcon /> 
+              <a href="mailto: southsidebadmintonclub@gmail.com">southsidebadmintonclub@gmail.com</a>
             </li>
-            <li className="flex items-center gap-2"><PhoneIcon />+61 419 002 098</li>
-            <li className="flex items-center gap-2"><PinIcon />Lot 22 Assembly Drive, Varsity Lakes QLD 4227, Australia</li>
+            <li className="flex gap-2">
+              <PhoneIcon />
+              +61 419 002 098
+            </li>
+            <li className="flex gap-2">
+              <PinIcon />
+              Lot 22 Assembly Drive, Varsity Lakes QLD 4227, Australia
+            </li>
           </ul>
         </div>
         {/* items-end push to right, justify-end pushes to bottom */}
