@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 
-
 const GoogleReviews = () => {
   const [reviews, setReviews] = useState([]);
   const placeId = 'ChIJEZDrEkMDkWsR1Nzkn-88Wmw'

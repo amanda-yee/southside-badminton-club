@@ -3,17 +3,17 @@ import { FacebookIcon, PhoneIcon, EmailIcon, PinIcon, DiagonalArrowIcon } from '
 const Footer = () => {
   
     return (
-        <footer className="grid grid-cols-3 text-sm text-gray-700 p-4 bg-[#75b9bc] text-[#ffffff] border-t-2 border-[#000000]">
+        <footer className="grid grid-cols-3 text-[#FFFFFF] bg-[#261f20] text-sm p-4">
         <div>
-          <p className="font-bold">Business Hours:</p>
+          <p className="font-bold text-lg">Business Hours:</p>
           <ul>
-            <li>MON - THU: 7:30pm - 9:30pm</li>
-            <li>SAT: 7:30pm - 9:30pm</li>
-            <li>FRI & SUN: Closed</li>
+            <li>Mon - Thu: 7:30pm - 9:30pm</li>
+            <li>Sat: 7:30pm - 9:30pm</li>
+            <li>Fri & Sun: Closed</li>
           </ul>
         </div>
         <div>
-          <p className="font-bold">Contact Us:</p>
+          <p className="font-bold text-lg">Contact Us:</p>
           <ul >
           <li className="flex items-center gap-2 underline"><EmailIcon /> 
                 <a href="mailto: southsidebadmintonclub@gmail.com">southsidebadmintonclub@gmail.com</a>
@@ -25,7 +25,7 @@ const Footer = () => {
         {/* items-end push to right, justify-end pushes to bottom */}
         <div className="text-right flex flex-col gap-3 items-end justify-end ">
           <div className="flex items-center gap-10">
-            <a className="inline-flex font-bold gap-2 py-1 px-3 rounded hover:text-[#FFFFFF]" 
+            <a className="inline-flex font-bold text-lg gap-2 py-1 px-3 rounded hover:text-[#5be0e6]" 
                 href="https://events.humanitix.com/southside-badminton-club-session-booking"
                 target="_blank"
                 rel="noopener noreferrer"
