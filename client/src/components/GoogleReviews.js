@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
+
 const GoogleReviews = () => {
   const [reviews, setReviews] = useState([]);
   const placeId = 'ChIJEZDrEkMDkWsR1Nzkn-88Wmw'
@@ -16,10 +17,11 @@ const GoogleReviews = () => {
                 console.log(data); 
                 
                 if (data.result.reviews) {
-                  // Filter to 5 star reviews 
-                  const filteredReviews = data.result.reviews.filter(
-                    review => review.rating == 5
-                  );  
+                  // Filter to latest 5 star reviews 
+                  const filteredReviews = data.result.reviews
+                  .filter(review => review.rating === 5)
+                  .sort((a, b) => b.time - a.time) // Sort reviews by time (newest first)
+                  .slice(0, 3);
                   setReviews(filteredReviews);
                 } else {
                   console.error('No reviews found in response');
@@ -36,10 +38,10 @@ const GoogleReviews = () => {
   }, []);
 
   return (
-    <div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
       {reviews.length > 0 ? (
         reviews.map((review) => (
-            <div key={review.time} style={{ marginBottom: '20px', padding: '10px', border: '1px solid #ddd', borderRadius: '5px' }}>
+            <div key={review.time} className="p-4 border border-gray-300 rounded-lg shadow-md">
             <strong>{review.author_name}</strong>
             <p>{'⭐'.repeat(Math.round(review.rating))}</p>
             <p>{review.text}</p>
