@@ -11,13 +11,12 @@ import GoogleReviews from './components/GoogleReviews';
 function App() {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
-      <Header />  
-
-      <main className="grid grid-cols-1 gap-4 p-8 sm:p-12">
+      <Header /> 
+      <main className="grid gap-6 p-8 sm:p-12">
         <div className="flex items-center">
           <Description />
           <ImageCarousel />
-        </div>
+        </div>  
         <GoogleReviews />
         <MapContainer />  
       </main>

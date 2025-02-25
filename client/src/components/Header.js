@@ -14,7 +14,7 @@ const Header = () => {
             Southside Badminton Club Gold Coast
           </h1>
 
-        <a className="ml-auto text-[#FFFFFF] inline-flex gap-2 py-2 px-3 rounded hover:text-[#5be0e6]" 
+        <a className="ml-auto inline-flex gap-2 text-[#FFFFFF] font-bold hover:text-[#5be0e6]" 
            href="https://events.humanitix.com/southside-badminton-club-session-booking"
            target="_blank"
            rel="noopener noreferrer"
