@@ -4,8 +4,8 @@ import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 const MapContainer = () => {
 
   const containerStyle = {
-    width: '400px',
-    height: '400px',
+    width: '350px',
+    height: '200px',
   };
 
   const center = {
@@ -15,7 +15,7 @@ const MapContainer = () => {
 
   const placeName = "Southside Badminton Club Gold Coast"; // Specify the full place name
 
-  const handleMarkerClick = () => {
+  const handleMapClick = () => {
     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(placeName)}`;
     window.open(googleMapsUrl, '_blank'); // opens link in a new tab
   };
@@ -27,9 +27,16 @@ const MapContainer = () => {
         mapContainerStyle={containerStyle}
         center={center}
         zoom={15}
+        options={{
+          mapTypeControl: false,
+          streetViewControl: false,
+          zoomControl: false,
+          fullscreenControl: false
+        }}
+        onClick={handleMapClick}
       >
 
-        <MarkerF position={center} title="Southside Badminton Club" onClick={handleMarkerClick} />
+        <MarkerF position={center} title="Southside Badminton Club" onClick={handleMapClick}/>
 
       </GoogleMap>
     </LoadScript>
