@@ -55,7 +55,7 @@ const ImageCarousel = () => {
         &#8594;
       </button>
 
-      {/* Nav dots */}
+      {/* Navigation dots */}
       <div className="flex justify-center mt-4 gap-2">
         {images.map((_, index) => (
           <button

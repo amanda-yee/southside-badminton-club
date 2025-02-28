@@ -2,6 +2,7 @@ import './App.css';
 
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Description from './components/Description';
 import ImageCarousel from './components/ImageCarousel'
 import MapContainer from './components/Map'; 
 import GoogleReviews from './components/GoogleReviews'; 
@@ -9,16 +10,33 @@ import GoogleReviews from './components/GoogleReviews';
 
 function App() {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
-      <Header />  
+    <div className="flex flex-col">
+      {/* Full-screen section */}
+      <div className="flex flex-col h-screen">
+        <Header />
 
-      <main className="grid grid-cols-1 gap-4 p-8 sm:p-12">
-        <ImageCarousel />
-        <MapContainer />  
-        <GoogleReviews />
-      </main>
+        <div className="flex flex-grow flex-col lg:flex-row items-center gap-8 pt-4 px-8">
+          <div className="lg:w-1/2">
+            <Description />
+            <div className="flex justify-center pt-4">
+              <GoogleReviews />
+            </div>
+          </div>
+          <div className="lg:w-1/2">
+            <ImageCarousel />
+          </div>
+        </div>
 
-      < Footer/>
+        <div className="flex justify-center text-xl">
+          We are located here: 
+        </div>
+      </div>
+
+      <div className="flex justify-center pt-4 pb-8">
+        <MapContainer />
+      </div>
+        
+      <Footer />
     </div>
   );
 }
