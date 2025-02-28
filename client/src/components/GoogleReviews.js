@@ -35,71 +35,72 @@ const GoogleReviews = () => {
     fetchReviews();
   }, []);
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-  
-    const nextSlide = () => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    };
-  
-    const prevSlide = () => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
-      );
-    };
-  
-    return (
-      <div className="relative w-full max-w-lg">
-        {/* Reviews */}
-        <div className="overflow-hidden rounded-lg">
-          <div
-            className="flex transition-transform duration-500"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {reviews.map((review, index) => (
-              <div
-                key={review.time}
-                className="flex flex-col items-center w-full flex-shrink-0 p-4 gap-4 border border-gray-300 rounded-lg shadow-md"
-              >
-                {/* Stars */}
-                <p className="flex">
-                  {Array.from({ length: Math.round(review.rating) }, (_, index) => (
-                    <StarIcon key={index} />
-                  ))}
-                </p>
 
-                <p className="text-sm">{review.text}</p>
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-                <div className="review flex items-center gap-2">
-                  <img
-                    src={review.profile_photo_url} // Dynamic URL from review object
-                    alt="Profile"
-                    className="w-8 h-8 rounded-full object-cover"
-                  />
-                  <div>
-                    <strong>{review.author_name}</strong>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-  
-        {/* Navigation Arrows */}
-        <button
-          className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white w-8 h-8 rounded-full hover:bg-opacity-75"
-          onClick={prevSlide}
-        >
-          &#8592;
-        </button>
-        <button
-          className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white w-8 h-8 rounded-full hover:bg-opacity-75"
-          onClick={nextSlide}
-        >
-          &#8594;
-        </button>
-      </div>
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
     );
   };
+  
+  return (
+    <div className="relative w-full max-w-lg">
+      {/* Reviews */}
+      <div className="overflow-hidden rounded-lg">
+        <div
+          className="flex transition-transform duration-500"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {reviews.map((review, index) => (
+            <div
+              key={review.time}
+              className="flex flex-col items-center w-full flex-shrink-0 p-4 gap-4 border border-gray-300 rounded-lg shadow-md"
+            >
+              {/* Stars */}
+              <p className="flex">
+                {Array.from({ length: Math.round(review.rating) }, (_, index) => (
+                  <StarIcon key={index} />
+                ))}
+              </p>
+
+              <p className="text-sm">{review.text}</p>
+
+              <div className="review flex items-center gap-2">
+                {/* <img
+                  src={review.profile_photo_url} // Dynamic URL from review object
+                  alt="Profile"
+                  className="w-8 h-8 rounded-full object-cover"
+                /> */}
+                <div>
+                  <strong>{review.author_name}</strong>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white w-8 h-8 rounded-full hover:bg-opacity-75"
+        onClick={prevSlide}
+      >
+        &#8592;
+      </button>
+      <button
+        className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white w-8 h-8 rounded-full hover:bg-opacity-75"
+        onClick={nextSlide}
+      >
+        &#8594;
+      </button>
+    </div>
+  );
+};
 
 export default GoogleReviews;
 
