@@ -12,7 +12,8 @@ module.exports = {
         'customlg' : '1100px', // new breakpoints
         'customft' : '940px',
         'custom' : '850px', 
-        'customsm' : '635px'
+        'customsm' : '635px',
+        'customxs' : '550px'
       },
     },
   },
