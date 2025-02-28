@@ -25,10 +25,11 @@ const Footer = () => {
             </li>
             <li className="flex gap-2">
               <PinIcon />
-              Lot 22 Assembly Drive, Varsity Lakes QLD 4227, Australia
+              Lot 22 Assembly Drive, Varsity Lakes QLD 4227
             </li>
           </ul>
         </div>
+
         {/* items-end push to right, justify-end pushes to bottom */}
         <div className="text-right flex flex-col gap-3 items-end justify-end ">
           <div className="flex items-center gap-10">

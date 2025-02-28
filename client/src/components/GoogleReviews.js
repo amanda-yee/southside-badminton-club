@@ -13,7 +13,7 @@ const GoogleReviews = () => {
             
             if (response.ok) {
                 const data = await response.json(); // Parse JSON data from the response
-                console.log(data); 
+                // console.log(data); 
                 
                 if (data.result.reviews) {
                   const filteredReviews = data.result.reviews
@@ -47,9 +47,9 @@ const GoogleReviews = () => {
     };
   
     return (
-      <div className="relative w-full max-w-lg mx-auto">
+      <div className="relative w-full max-w-lg">
         {/* Reviews */}
-        <div className="overflow-hidden rounded-lg h-60">
+        <div className="overflow-hidden rounded-lg">
           <div
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -60,8 +60,8 @@ const GoogleReviews = () => {
                 className="w-full flex-shrink-0 p-4 border border-gray-300 rounded-lg shadow-md bg-white"
               >
                 <strong>{review.author_name}</strong>
-                <p>{'⭐'.repeat(Math.round(review.rating))}</p>
-                <p>{review.text}</p>
+                <p>{'⭐'.repeat(Math.round(review.rating))}</p> <br></br>
+                <p className="text-sm">{review.text}</p>
               </div>
             ))}
           </div>

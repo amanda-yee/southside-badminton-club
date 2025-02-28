@@ -10,18 +10,34 @@ import GoogleReviews from './components/GoogleReviews';
 
 function App() {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] min-h-screen">
-      <Header /> 
-      <main className="grid gap-6 p-8 sm:p-12">
-        <div className="flex items-center">
-          <Description />
-          <ImageCarousel />
-        </div>  
-        <GoogleReviews />
-        <MapContainer />  
-      </main>
+    <div className="flex flex-col">
+      {/* Full-screen section */}
+      <div className="flex flex-col h-screen">
+        <Header />
 
-      < Footer/>
+        <div className="flex flex-grow items-center gap-8 px-8">
+          <div className="w-1/2">
+            <Description />
+            <div className="flex justify-center pt-4">
+              <GoogleReviews />
+            </div>
+          </div>
+          <div className="w-1/2">
+            <ImageCarousel />
+          </div>
+        </div>
+
+        <div className="flex justify-center text-xl">
+          Find us here:
+        </div>
+
+      </div>
+
+      <div className="flex justify-center p-4">
+        <MapContainer />
+      </div>
+        
+      <Footer />
     </div>
   );
 }

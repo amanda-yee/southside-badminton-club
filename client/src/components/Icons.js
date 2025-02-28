@@ -44,7 +44,7 @@ export const ShuttlecockIcon = () => (
       viewBox="0 0 32 32"
       xmlSpace="preserve"
       fill="currentColor"
-      className="size-24"
+      className="size-12"
     >
       <g id="SVGRepo_iconCarrier">
         <g>
