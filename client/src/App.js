@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       {/* Full-screen section */}
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col customlg:h-screen">
         <Header />
 
         <div className="flex flex-grow flex-col customlg:flex-row items-center gap-8 pt-4 px-8">
@@ -27,12 +27,12 @@ function App() {
           </div>
         </div>
 
-        <div className="flex justify-center text-xl bg-[#fff726]">
+        <div className="flex justify-center text-xl pt-4 customlg:pt-0">
           We are located here: 
         </div>
       </div>
 
-      <div className="flex justify-center p-4">
+      <div className="flex justify-center pt-4 pb-4">
         <MapContainer />
       </div>
         

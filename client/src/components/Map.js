@@ -6,7 +6,8 @@ const MapContainer = () => {
   const apiKey = "AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM"; //process.env.REACT_APP_GOOGLE_API_KEY;
   
   const containerStyle = {
-    width: '75%',
+    width: '90%',
+    maxWidth: '1100px',
     height: '300px',
   };
 
