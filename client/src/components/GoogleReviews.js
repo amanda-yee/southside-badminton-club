@@ -19,7 +19,7 @@ const GoogleReviews = () => {
                 if (data.result.reviews) {
                   const filteredReviews = data.result.reviews
                   .filter(review => review.rating === 5) // 5 star reviews
-                  .sort((a, b) => b.time - a.time) // sort reviews by newest first
+                  // .sort((a, b) => b.time - a.time) // sort reviews by newest first
                   setReviews(filteredReviews);
                 } else {
                   console.error('No reviews found in response');

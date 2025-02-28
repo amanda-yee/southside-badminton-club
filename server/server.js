@@ -9,6 +9,7 @@
 const express = require("express");
 const cors = require("cors");
 const axios = require('axios');
+require('dotenv').config({ path: '../.env' }); // read in .env from root dir
 
 const app = express();
 const PORT = 5000;
@@ -22,8 +23,7 @@ app.get("/", (req, res) => {
 
 app.get('/api/google-reviews', async (req, res) => {
   const placeId = req.query.placeId;
-  const apiKey = 'AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM'
-  // const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY; 
 
   try {
     const response = await axios.get(
