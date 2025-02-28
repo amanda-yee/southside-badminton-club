@@ -9,7 +9,11 @@ module.exports = {
         sans: ['Montserrat', 'sans-serif'], // Default font
       },
       screens: {
-        'custom': '850px', // Defines a new breakpoint at 850px
+        'lg-custom' : '1100px', // new breakpoints
+        'md-custom' : '940px',
+        'hd-custom' : '850px', // for header
+        'ft-custom' : '635px', // for footer
+        'ds-custom' : '550px' // for desc
       },
     },
   },
