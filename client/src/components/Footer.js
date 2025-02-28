@@ -3,7 +3,7 @@ import { FacebookIcon, PhoneIcon, EmailIcon, PinIcon, DiagonalArrowIcon } from '
 const Footer = () => {
   
     return (
-        <footer className="grid customsm:grid-cols-2 customft:grid-cols-[1fr_2fr_1fr] text-[#FFFFFF] bg-[#261f20] text-sm p-4">
+        <footer className="grid ft-custom:grid-cols-2 md-custom:grid-cols-[1fr_2fr_1fr] text-[#FFFFFF] bg-[#261f20] text-sm p-4">
         <div>
           <p className="font-bold text-lg">Business Hours:</p>
           <ul>
@@ -13,7 +13,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <p className="items-center pt-6 customsm:pt-0 font-bold text-lg">Contact Us:</p>
+          <p className="items-center pt-6 ft-custom:pt-0 font-bold text-lg">Contact Us:</p>
           <ul>
             <li className="flex gap-2 underline">
               <EmailIcon /> 
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         {/* items-end push to right, justify-end pushes to bottom */}
-        <div className="flex gap-3 pt-6 justify-end flex-col customft:items-end customft:pt-0">
+        <div className="flex gap-3 pt-6 justify-end flex-col md-custom:items-end md-custom:pt-0">
           <div className="flex items-center gap-10">
             <a className="inline-flex font-bold text-lg gap-2 hover:text-[#5be0e6]" 
                 href="https://events.humanitix.com/southside-badminton-club-session-booking"
