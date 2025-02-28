@@ -8,7 +8,7 @@ import MapContainer from './components/Map';
 import GoogleReviews from './components/GoogleReviews'; 
 
 function App() {
-
+  
   return (
     <div>
       {/* Full-screen section */}

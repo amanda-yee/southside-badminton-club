@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 const MapContainer = () => {
 
-  const apiKey = "AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM"; //process.env.REACT_APP_GOOGLE_API_KEY;
+  const [apiKey, setApiKey] = useState("");
+
+  // Fetch the API key from the server on component mount
+  useEffect(() => {
+    const fetchKey = async () => {
+        try {
+            const response = await fetch(`http://localhost:5000/api/google-maps`);
+            
+            if (response.ok) {
+                const data = await response.json(); // Parse JSON data from the response
+                setApiKey(data.apiKey);
+              } else {
+                console.error('Failed to fetch API key needed for map.', response.status);
+              }
+        } catch (error) {
+            console.error('Error fetching key:', error);
+        }
+    };
+
+    fetchKey();
+  }, []);
+
+  if (!apiKey) {
+    return <div>Loading map...</div>; // display message until the API key is set
+  }
   
   const containerStyle = {
     width: '90%',

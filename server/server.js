@@ -9,9 +9,11 @@
 const express = require("express");
 const cors = require("cors");
 const axios = require('axios');
+require('dotenv').config({ path: '../.env' }); // read in .env from root dir
 
 const app = express();
 const PORT = 5000;
+const apiKey = process.env.REACT_APP_GOOGLE_API_KEY; 
 
 app.use(cors());
 app.use(express.json());
@@ -22,8 +24,6 @@ app.get("/", (req, res) => {
 
 app.get('/api/google-reviews', async (req, res) => {
   const placeId = req.query.placeId;
-  const apiKey = 'AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM'
-  // const apiKey = process.env.GOOGLE_MAPS_API_KEY;
 
   try {
     const response = await axios.get(
@@ -35,6 +35,10 @@ app.get('/api/google-reviews', async (req, res) => {
   } catch (error) {
     console.error('Error fetching from Google API:', error);  // Log the error
   }
+});
+
+app.get("/api/google-maps", (req, res) => {
+  res.json({ apiKey }); // return variables to front end in json format
 });
 
 app.listen(PORT, () => {
