@@ -15,14 +15,14 @@ function App() {
       <div className="flex flex-col h-screen">
         <Header />
 
-        <div className="flex flex-grow items-center gap-8 px-8">
-          <div className="w-1/2">
+        <div className="flex flex-grow flex-col lg:flex-row items-center gap-8 pt-4 px-8">
+          <div className="lg:w-1/2">
             <Description />
             <div className="flex justify-center pt-4">
               <GoogleReviews />
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="lg:w-1/2">
             <ImageCarousel />
           </div>
         </div>
