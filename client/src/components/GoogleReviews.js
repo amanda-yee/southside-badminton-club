@@ -1,6 +1,7 @@
 // curl -X GET "https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJEZDrEkMDkWsR1Nzkn-88Wmw&fields=name,rating,reviews&key=AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM"
 
 import React, { useEffect, useState } from "react";
+import { StarIcon } from "./Icons";
 
 const GoogleReviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -57,11 +58,27 @@ const GoogleReviews = () => {
             {reviews.map((review, index) => (
               <div
                 key={review.time}
-                className="w-full flex-shrink-0 p-4 border border-gray-300 rounded-lg shadow-md bg-white"
+                className="flex flex-col items-center w-full flex-shrink-0 p-4 gap-4 border border-gray-300 rounded-lg shadow-md"
               >
-                <strong>{review.author_name}</strong>
-                <p>{'⭐'.repeat(Math.round(review.rating))}</p> <br></br>
+                {/* Stars */}
+                <p className="flex">
+                  {Array.from({ length: Math.round(review.rating) }, (_, index) => (
+                    <StarIcon key={index} />
+                  ))}
+                </p>
+
                 <p className="text-sm">{review.text}</p>
+
+                <div className="review flex items-center gap-2">
+                  <img
+                    src={review.profile_photo_url} // Dynamic URL from review object
+                    alt="Profile"
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                  <div>
+                    <strong>{review.author_name}</strong>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -69,13 +86,13 @@ const GoogleReviews = () => {
   
         {/* Navigation Arrows */}
         <button
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+          className="absolute bottom-4 left-4 bg-black bg-opacity-50 text-white w-8 h-8 rounded-full hover:bg-opacity-75"
           onClick={prevSlide}
         >
           &#8592;
         </button>
         <button
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
+          className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white w-8 h-8 rounded-full hover:bg-opacity-75"
           onClick={nextSlide}
         >
           &#8594;

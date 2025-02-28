@@ -30,10 +30,9 @@ function App() {
         <div className="flex justify-center text-xl">
           Find us here:
         </div>
-
       </div>
 
-      <div className="flex justify-center p-4">
+      <div className="flex justify-center pt-4 pb-8">
         <MapContainer />
       </div>
         
