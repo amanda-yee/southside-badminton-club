@@ -3,6 +3,8 @@ import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 const MapContainer = () => {
 
+  const apiKey = "AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM"; //process.env.REACT_APP_GOOGLE_API_KEY;
+  
   const containerStyle = {
     width: '75%',
     height: '300px',
@@ -13,16 +15,16 @@ const MapContainer = () => {
     lng: 153.411802, 
   };
 
-  const placeName = "Southside Badminton Club Gold Coast"; // Specify the full place name
-
+  const placeName = "Southside Badminton Club Gold Coast"; 
+  
+  // opens Google directions to place in new tab
   const handleMapClick = () => {
     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(placeName)}`;
-    window.open(googleMapsUrl, '_blank'); // opens link in a new tab
+    window.open(googleMapsUrl, '_blank');
   };
 
   return (
-    // REMOVE HARD CODING OF API KEY
-    <LoadScript googleMapsApiKey="AIzaSyBVAY4IkVjYuquaoaPR8hELq0iHjniYbJM">
+    <LoadScript googleMapsApiKey={apiKey}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}

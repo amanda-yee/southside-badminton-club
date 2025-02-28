@@ -7,32 +7,32 @@ import ImageCarousel from './components/ImageCarousel'
 import MapContainer from './components/Map'; 
 import GoogleReviews from './components/GoogleReviews'; 
 
-
 function App() {
+
   return (
-    <div className="flex flex-col">
+    <div>
       {/* Full-screen section */}
       <div className="flex flex-col h-screen">
         <Header />
 
-        <div className="flex flex-grow flex-col lg:flex-row items-center gap-8 pt-4 px-8">
-          <div className="lg:w-1/2">
+        <div className="flex flex-grow flex-col customlg:flex-row items-center gap-8 pt-4 px-8">
+          <div className="customlg:w-1/2">
             <Description />
             <div className="flex justify-center pt-4">
               <GoogleReviews />
             </div>
           </div>
-          <div className="lg:w-1/2">
+          <div className="customlg:w-1/2">
             <ImageCarousel />
           </div>
         </div>
 
-        <div className="flex justify-center text-xl">
+        <div className="flex justify-center text-xl bg-[#fff726]">
           We are located here: 
         </div>
       </div>
 
-      <div className="flex justify-center pt-4 pb-8">
+      <div className="flex justify-center p-4">
         <MapContainer />
       </div>
         
