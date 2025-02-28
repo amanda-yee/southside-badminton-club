@@ -28,7 +28,7 @@ function App() {
         </div>
 
         <div className="flex justify-center text-xl">
-          Find us here:
+          We are located here: 
         </div>
       </div>
 
