@@ -4,12 +4,13 @@ import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 const MapContainer = () => {
 
   const [apiKey, setApiKey] = useState("");
+  const serverUrl = (window.location.hostname === 'localhost' ? 'http://localhost:5000' : 'https://southside-badminton-club.onrender.com');
 
   // Fetch the API key from the server on component mount
   useEffect(() => {
     const fetchKey = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/google-maps`);
+            const response = await fetch(`${serverUrl}/api/google-maps`);
             
             if (response.ok) {
                 const data = await response.json(); // Parse JSON data from the response

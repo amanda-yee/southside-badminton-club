@@ -6,11 +6,12 @@ import { StarIcon } from "./Icons";
 const GoogleReviews = () => {
   const [reviews, setReviews] = useState([]);
   const placeId = 'ChIJEZDrEkMDkWsR1Nzkn-88Wmw'
+  const serverUrl = (window.location.hostname === 'localhost' ? 'http://localhost:5000' : 'https://southside-badminton-club.onrender.com');
 
   useEffect(() => {
     const fetchReviews = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/api/google-reviews?placeId=${placeId}`);
+            const response = await fetch(`${serverUrl}/api/google-reviews?placeId=${placeId}`);
             
             if (response.ok) {
                 const data = await response.json(); // Parse JSON data from the response
