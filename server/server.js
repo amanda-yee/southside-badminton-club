@@ -12,7 +12,7 @@ const axios = require('axios');
 require('dotenv').config({ path: '../.env' }); // read in .env from root dir
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const apiKey = process.env.REACT_APP_GOOGLE_API_KEY; 
 
 app.use(cors());
