@@ -34,7 +34,7 @@ const GoogleReviews = () => {
     };
 
     fetchReviews();
-  }, []);
+  }, [serverUrl]);
 
 
   const [currentIndex, setCurrentIndex] = useState(0);

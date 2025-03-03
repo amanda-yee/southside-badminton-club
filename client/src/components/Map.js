@@ -24,7 +24,7 @@ const MapContainer = () => {
     };
 
     fetchKey();
-  }, []);
+  }, [serverUrl]);
 
   if (!apiKey) {
     return <div>Loading map...</div>; // display message until the API key is set
