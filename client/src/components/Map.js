@@ -4,7 +4,9 @@ import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 const MapContainer = () => {
 
   const [apiKey, setApiKey] = useState("");
-  const serverUrl = (window.location.hostname === 'localhost' ? 'http://localhost:5000' : 'https://southside-badminton-club.onrender.com');
+  const serverUrl = window.location.hostname === 'localhost' 
+    ? 'http://localhost:5000' 
+    : 'https://southside-badminton-club.onrender.com';
 
   // Fetch the API key from the server on component mount
   useEffect(() => {

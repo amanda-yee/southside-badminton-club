@@ -5,8 +5,11 @@ import { StarIcon } from "./Icons";
 
 const GoogleReviews = () => {
   const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true); // track data loading state
   const placeId = 'ChIJEZDrEkMDkWsR1Nzkn-88Wmw'
-  const serverUrl = (window.location.hostname === 'localhost' ? 'http://localhost:5000' : 'https://southside-badminton-club.onrender.com');
+  const serverUrl = window.location.hostname === 'localhost' 
+    ? 'http://localhost:5000' 
+    : 'https://southside-badminton-club.onrender.com';
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -30,12 +33,13 @@ const GoogleReviews = () => {
               }
         } catch (error) {
             console.error('Error fetching reviews front end:', error);
+        } finally {
+          setLoading(false); // set 'loading' to false after data has been fetched
         }
     };
 
     fetchReviews();
   }, [serverUrl]);
-
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -48,9 +52,18 @@ const GoogleReviews = () => {
       prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
     );
   };
+
+  if (loading) {
+    return <div className="text-center text-gray-500">Loading reviews...</div>;
+  }
+
+  if (reviews.length === 0) {
+    return <div className="text-center text-gray-500">No reviews found.</div>;
+  }
   
   return (
-    <div className="relative w-full max-w-lg">
+    <div className="relative w-full max-w-xs ds-custom:max-w-lg ft-custom:max-w-xl mx-auto"
+      >
       {/* Reviews */}
       <div className="overflow-hidden rounded-lg">
         <div
@@ -60,27 +73,28 @@ const GoogleReviews = () => {
           {reviews.map((review, index) => (
             <div
               key={review.time}
-              className="flex flex-col items-center w-full flex-shrink-0 p-4 gap-4 border border-gray-300 rounded-lg shadow-md"
+              className="w-full flex-shrink-0 text-center text-xs ds-custom:text-sm items-center gap-4 p-4
+              border border-gray-300 rounded-lg shadow-md flex flex-col"
             >
               {/* Stars */}
-              <p className="flex">
+              <div className="flex">
                 {Array.from({ length: Math.round(review.rating) }, (_, index) => (
                   <StarIcon key={index} />
                 ))}
-              </p>
+              </div>
 
-              <p className="text-sm">{review.text}</p>
+              <div>{review.text}</div> 
 
               <div className="review flex items-center gap-2">
-                {/* <img
+                 <img
                   src={review.profile_photo_url} // Dynamic URL from review object
                   alt="Profile"
                   className="w-8 h-8 rounded-full object-cover"
-                /> */}
+                />
                 <div>
                   <strong>{review.author_name}</strong>
                 </div>
-              </div>
+              </div> 
             </div>
           ))}
         </div>

@@ -18,7 +18,7 @@ function App() {
         <div className="flex flex-grow flex-col lg-custom:flex-row items-center gap-8 pt-4 px-8">
           <div className="lg-custom:w-1/2">
             <Description />
-            <div className="flex justify-center p-4">
+            <div>
               <GoogleReviews />
             </div>
           </div>
@@ -27,7 +27,7 @@ function App() {
           </div>
         </div>
 
-        <div className="flex justify-center text-xl pt-4 lg-custom:pt-0">
+        <div className="flex justify-center ds-custom:text-xl pt-4 lg-custom:pt-0">
           We are located here: 
         </div>
       </div>
