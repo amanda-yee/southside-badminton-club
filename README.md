@@ -1,6 +1,6 @@
 # Southside Badminton Club Gold Coast
 
-Business website for a non-profit club
+https://southsidebadmintonclub.netlify.app/
 
 
 ### Technology Stack
