@@ -1,8 +1,5 @@
 # Southside Badminton Club Gold Coast
 
-https://southsidebadmintonclub.netlify.app/
-
-
 ### Technology Stack
 
 - **Frontend:** React.js
