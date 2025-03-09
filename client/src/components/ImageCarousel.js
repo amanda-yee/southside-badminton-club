@@ -2,13 +2,14 @@ import React, { useState } from "react";
 
 const ImageCarousel = () => {
   const media = [
-    `${process.env.PUBLIC_URL}/media/badminton-vid.mp4`,
+    
     `${process.env.PUBLIC_URL}/media/badminton1.jpg`,
     `${process.env.PUBLIC_URL}/media/badminton2.jpg`,
     `${process.env.PUBLIC_URL}/media/badminton3.jpg`,
     `${process.env.PUBLIC_URL}/media/badminton4.jpg`,
     `${process.env.PUBLIC_URL}/media/badminton5.jpg`,
     `${process.env.PUBLIC_URL}/media/badminton6.jpg`,
+    `${process.env.PUBLIC_URL}/media/badminton-vid.mp4`
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
