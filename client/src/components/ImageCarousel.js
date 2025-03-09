@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const ImageCarousel = () => {
   const media = [
-    
     `${process.env.PUBLIC_URL}/media/badminton1.jpg`,
     `${process.env.PUBLIC_URL}/media/badminton2.jpg`,
     `${process.env.PUBLIC_URL}/media/badminton3.jpg`,

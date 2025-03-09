@@ -38,7 +38,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-              BOOK NOW <br></br> 预订现在 <DiagonalArrowIcon />
+              BOOK NOW <br></br> 报名 <DiagonalArrowIcon />
             </a>
 
             <a href="https://www.facebook.com/p/Southside-Badminton-Club-Gold-Coast-100033686513550/" target="_blank" rel="noopener noreferrer">
