@@ -5,7 +5,7 @@ const Header = () => {
       <header className="hd-custom:flex bg-[#171414] text-[#FFFFFF] p-4 hd-custom:px-8">
         
         <div className="flex items-center gap-5">
-          <img src={`${process.env.PUBLIC_URL}/images/southside-logo.png`} 
+          <img src={`${process.env.PUBLIC_URL}/media/southside-logo.png`} 
             alt="Southside Badminton Club Logo" 
             width="75" height="75"
           />

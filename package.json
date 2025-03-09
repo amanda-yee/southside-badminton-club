@@ -5,6 +5,7 @@
     "dotenv": "^16.4.7"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "netlify-cli": "^19.0.0"
   }
 }
