@@ -20,7 +20,7 @@ const Header = () => {
            target="_blank"
            rel="noopener noreferrer"
           >
-          BOOK NOW <DiagonalArrowIcon />
+          BOOK NOW <br></br> 预订现在<DiagonalArrowIcon />
         </a>
       </header>
     );
